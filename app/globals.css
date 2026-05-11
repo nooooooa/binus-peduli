@@ -1,26 +1,104 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
+}
+
+.login-page {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+    135deg,
+    #4f7df3,
+    #59c3ff
+  );
+}
+
+.login-card {
+  width: 380px;
+
+  background: white;
+
+  border-radius: 12px;
+
+  padding: 40px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.15);
+}
+
+.logo-area {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo-area h1 {
+  color: #2d6cdf;
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.logo-area p {
+  color: #666;
+  font-size: 14px;
+}
+
+.form-area {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-area input {
+  padding: 14px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition: 0.3s;
+}
+
+.form-area input:focus {
+  border-color: #4f7df3;
+
+  box-shadow:
+    0 0 5px rgba(79,125,243,0.4);
+}
+
+.form-area button {
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #4f7df3;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.form-area button:hover {
+  background: #3967db;
 }
