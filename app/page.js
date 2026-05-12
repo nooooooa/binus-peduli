@@ -59,7 +59,10 @@ export default function BinusPeduliSoftBlue() {
     </div>
 
       {/* LOGIN */}
-      <div className="page show" id="pg-login">
+      <div
+  className={`page ${currentPage === 'login' ? 'show' : ''}`}
+  id="pg-login"
+>
         <div className="login-wrap">
           <div className="login-left">
             <div className="ll-brand">
@@ -345,7 +348,10 @@ export default function BinusPeduliSoftBlue() {
       </div>)}
 
       {/* TRACK */}
-      <div className="page" id="pg-track">
+      <div
+  className={`page ${currentPage === 'track' ? 'show' : ''}`}
+  id="pg-track"
+>
         <div className="track-pg">
           <h2>Lacak Status Laporan</h2>
           <div className="sub">Masukkan Ticket ID yang diterima saat laporan dikirim. Tidak perlu login.</div>
