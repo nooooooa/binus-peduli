@@ -289,3 +289,541 @@ body{font-family:'DM Sans',sans-serif;background:var(--b1);color:var(--txt);min-
 .panic-float svg{width:18px;height:18px;color:#C62828;flex-shrink:0;}
 .panic-title2{font-size:13px;font-weight:700;color:#B71C1C;}
 .panic-sub2{font-size:11.5px;color:#C62828;}
+
+/* NEW DASHBOARD LAYOUT STYLES - ADD THIS AT THE BOTTOM OF YOUR globals.css */
+.main-wrap {
+  padding: 20px 28px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr 260px;
+  gap: 16px;
+  align-items: start;
+}
+
+.left-col, .center-col, .right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Profile Widget */
+.profile-widget {
+  background: var(--b5);
+  border-color: var(--b6);
+  padding: 18px;
+}
+
+.profile-widget .widget-title {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.profile-name {
+  font-size: 17px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+.profile-sub {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+/* Stats Mini Grid */
+.stats-mini-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.stat-mini-item {
+  background: var(--b1);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.stat-mini-value {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--b5);
+}
+
+.stat-mini-label {
+  font-size: 11px;
+  color: var(--txt2);
+  margin-top: 1px;
+}
+
+/* Safe Widget */
+.safe-widget {
+  background: #E8F5E9;
+  border-color: #A5D6A7;
+  padding: 14px;
+}
+
+.safe-icon-small {
+  width: 30px;
+  height: 30px;
+  background: #C8E6C9;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.safe-icon-small svg {
+  width: 15px;
+  height: 15px;
+  color: #2E7D32;
+}
+
+.safe-title-small {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #1B5E20;
+  margin-bottom: 3px;
+}
+
+.safe-sub-small {
+  font-size: 11.5px;
+  color: #388E3C;
+  line-height: 1.4;
+}
+
+/* Panic Widget */
+.panic-widget {
+  background: #FFF0F0;
+  border: 2px solid #FFCDD2;
+  border-radius: 14px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.panic-widget svg {
+  width: 17px;
+  height: 17px;
+  color: #C62828;
+  flex-shrink: 0;
+}
+
+.panic-title {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #B71C1C;
+}
+
+.panic-sub {
+  font-size: 11px;
+  color: #C62828;
+}
+
+/* Journey Card */
+.journey-card {
+  background: var(--b1);
+  border-radius: 14px;
+  border: 1.5px solid var(--border);
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.journey-bg-layer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #E8F4FF 0%, #D0E8FA 100%);
+  z-index: 0;
+}
+
+.journey-content {
+  position: relative;
+  z-index: 1;
+}
+
+.journey-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--txt);
+  margin-bottom: 2px;
+}
+
+.journey-subtitle {
+  font-size: 11.5px;
+  color: var(--txt2);
+  margin-bottom: 16px;
+}
+
+.journey-steps {
+  display: flex;
+  align-items: center;
+}
+
+.step-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.step-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2.5px solid var(--border);
+  background: var(--white);
+}
+
+.step-circle.done {
+  background: #4CAF50;
+  border-color: #388E3C;
+}
+
+.step-circle.active {
+  background: var(--b5);
+  border-color: var(--b6);
+  box-shadow: 0 0 0 3px rgba(74, 143, 212, 0.2);
+}
+
+.step-circle.locked {
+  background: #F0F4F8;
+  border-color: #C8D8E8;
+}
+
+.step-circle svg {
+  width: 16px;
+  height: 16px;
+}
+
+.step-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--txt2);
+  text-align: center;
+  max-width: 52px;
+  line-height: 1.3;
+}
+
+.step-label.done {
+  color: #2E7D32;
+}
+
+.step-label.active {
+  color: var(--b5);
+}
+
+.step-connector {
+  flex: 1;
+  height: 2.5px;
+  background: var(--b2);
+  margin-top: -20px;
+}
+
+.step-connector.done {
+  background: #4CAF50;
+}
+
+/* Quick Actions Grid */
+.qa-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.qa-item {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.qa-item:hover {
+  border-color: var(--b3);
+  background: var(--b1);
+  transform: translateY(-1px);
+}
+
+.qa-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qa-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.qa-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--txt);
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* Widget Header */
+.widget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.see-all-link {
+  font-size: 11px;
+  color: var(--b5);
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* Laporan Grid */
+.laporan-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.lap-card {
+  background: var(--white);
+  border-radius: 12px;
+  border: 1.5px solid var(--border);
+  padding: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.lap-card:hover {
+  border-color: var(--b3);
+  transform: translateY(-2px);
+}
+
+.lap-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 9px;
+}
+
+.lap-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lap-id {
+  font-size: 10.5px;
+  color: var(--txt3);
+  margin-bottom: 2px;
+}
+
+.lap-category {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--txt);
+  margin-bottom: 3px;
+}
+
+.lap-date {
+  font-size: 11.5px;
+  color: var(--txt2);
+  margin-top: 3px;
+}
+
+.lap-progress {
+  margin-top: 9px;
+}
+
+.progress-track {
+  height: 3.5px;
+  background: var(--b1);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 99px;
+  background: var(--b4);
+}
+
+.progress-label {
+  font-size: 10.5px;
+  color: var(--txt3);
+  margin-top: 3px;
+}
+
+/* Badges */
+.badge-proses {
+  background: var(--b1);
+  color: var(--b5);
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 20px;
+}
+
+.badge-selesai {
+  background: #E8F5E9;
+  color: #2E7D32;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 20px;
+}
+
+/* Notifikasi */
+.notif-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.notif-item {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  padding: 9px;
+  background: var(--b1);
+  border-radius: 9px;
+}
+
+.notif-dot-blue {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--b4);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.notif-dot-green {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4CAF50;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.notif-dot-amber {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #F9A825;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.notif-text {
+  font-size: 11.5px;
+  color: var(--txt);
+  line-height: 1.4;
+}
+
+.notif-time {
+  font-size: 10.5px;
+  color: var(--txt3);
+  margin-top: 1px;
+}
+
+/* Psikolog List */
+.psikolog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 8px;
+}
+
+.psikolog-card {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  padding: 9px;
+  border-radius: 9px;
+  border: 1.5px solid var(--border);
+  background: var(--white);
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.psikolog-card:hover {
+  border-color: var(--b3);
+}
+
+.psi-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.psi-name {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--txt);
+}
+
+.psi-spec {
+  font-size: 11px;
+  color: var(--txt2);
+}
+
+.psi-available {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #2E7D32;
+}
+
+.btn-book {
+  width: 100%;
+  margin-top: 8px;
+  height: 36px;
+  background: var(--b5);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-book:hover {
+  background: var(--b6);
+}
