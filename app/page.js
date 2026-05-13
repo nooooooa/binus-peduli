@@ -132,7 +132,7 @@ export default function BinusPeduliSoftBlue() {
                   Masuk ke Dashboard
                 </button>
                 <div className="sep-row"><div className="sep-line"></div><span className="sep-txt">atau</span><div className="sep-line"></div></div>
-                <button className="btn-sec" onClick={() => goPage('lapor')}>
+                <button className="btn-sec" onClick={() => goPage('dashboard')}>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="8" r="5"/><path d="M3 21v-1a9 9 0 0118 0v1"/></svg>
                   Lapor Secara Anonim
                 </button>
@@ -158,290 +158,224 @@ export default function BinusPeduliSoftBlue() {
 
       {/* DASHBOARD - NEW LAYOUT */}
       {isLoggedIn && (
-        <div className={`page ${currentPage === 'dashboard' ? 'show' : ''}`}>
-          <div className="main-wrap">
-            {/* Three Column Layout */}
-            <div className="dashboard-grid">
-              
-              {/* LEFT COLUMN */}
-              <div className="left-col">
-                <div className="widget profile-widget">
-                  <div className="widget-title">Profil Anda</div>
-                  <div className="profile-name">Daniel Putra</div>
-                  <div className="profile-sub">Mahasiswa Sarjana<br />BINUS University · Jan 2025</div>
-                </div>
+        <div className={`page ${currentPage === 'dashboard' ? 'show' : ''}`} id="pg-dashboard">
+          <div className="dash">
+            <div className="dash-header">
+              <h2>Selamat datang, Daniel</h2>
+              <p>Berikut ringkasan aktivitas laporan Anda di Binus Peduli.</p>
+            </div>
 
-                <div className="widget">
-                  <div className="widget-title">Ringkasan Kasus</div>
-                  <div className="stats-mini-grid">
-                    <div className="stat-mini-item">
-                      <div className="stat-mini-value">3</div>
-                      <div className="stat-mini-label">Total Laporan</div>
-                    </div>
-                    <div className="stat-mini-item">
-                      <div className="stat-mini-value">1</div>
-                      <div className="stat-mini-label">Diproses</div>
-                    </div>
-                    <div className="stat-mini-item">
-                      <div className="stat-mini-value">3</div>
-                      <div className="stat-mini-label">Sesi Terapi</div>
-                    </div>
-                    <div className="stat-mini-item">
-                      <div className="stat-mini-value">2</div>
-                      <div className="stat-mini-label">Selesai</div>
-                    </div>
-                  </div>
+            <div className="stats">
+              <div className="stat-card">
+                <div className="stat-label">
+                  <span className="stat-dot dot-blue"></span>
+                  Total Laporan
                 </div>
+                <div className="stat-val">3</div>
+                <div className="stat-sub">Sejak bergabung</div>
+              </div>
 
-                <div className="widget safe-widget">
-                  <div className="safe-icon-small">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <div className="stat-card">
+                <div className="stat-label">
+                  <span className="stat-dot dot-amber"></span>
+                  Sedang Diproses
+                </div>
+                <div className="stat-val">1</div>
+                <div className="stat-sub">Menunggu respon SASC</div>
+              </div>
+
+              <div className="stat-card">
+                <div className="stat-label">
+                  <span className="stat-dot dot-green"></span>
+                  Selesai
+                </div>
+                <div className="stat-val">2</div>
+                <div className="stat-sub">Kasus ditangani</div>
+              </div>
+
+              <div className="stat-card">
+                <div className="stat-label">
+                  <span className="stat-dot dot-sky"></span>
+                  Sesi Terapi
+                </div>
+                <div className="stat-val">3x</div>
+                <div className="stat-sub">Tersisa dari program</div>
+              </div>
+            </div>
+
+            <div className="panel-grid">
+              {/* Riwayat Laporan */}
+              <div className="panel">
+                <h3>Riwayat Laporan</h3>
+
+                <div className="report-item">
+                  <div className="ri-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#4A90E2" strokeWidth="2" width="16" height="16">
+                      <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                      <polyline points="14 2 14 8 20 8" />
                     </svg>
                   </div>
-                  <div className="safe-title-small">Ruang ini aman</div>
-                  <div className="safe-sub-small">Data Anda dienkripsi penuh. Tidak ada pihak luar yang dapat mengakses.</div>
-                </div>
 
-                <div className="panic-widget">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
-                    <line x1="12" y1="9" x2="12" y2="13"/>
-                    <line x1="12" y1="17" x2="12.01" y2="17"/>
-                  </svg>
                   <div>
-                    <div className="panic-title">Tombol Darurat</div>
-                    <div className="panic-sub">Tap untuk tutup layar</div>
+                    <div className="ri-cat">Pelecehan Verbal</div>
+                    <div className="ri-sub">BPD-2025-001 · 12 Mar 2025</div>
                   </div>
+
+                  <span className="ri-badge badge-proses">Diproses</span>
+                </div>
+
+                <div className="report-item">
+                  <div className="ri-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#4A90E2" strokeWidth="2" width="16" height="16">
+                      <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                      <polyline points="14 2 14 8 20 8" />
+                    </svg>
+                  </div>
+
+                  <div>
+                    <div className="ri-cat">Bullying Verbal</div>
+                    <div className="ri-sub">BPD-2025-002 · 5 Feb 2025</div>
+                  </div>
+
+                  <span className="ri-badge badge-selesai">Selesai</span>
+                </div>
+
+                <div className="report-item">
+                  <div className="ri-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#4A90E2" strokeWidth="2" width="16" height="16">
+                      <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                      <polyline points="14 2 14 8 20 8" />
+                    </svg>
+                  </div>
+
+                  <div>
+                    <div className="ri-cat">Pelecehan Fisik</div>
+                    <div className="ri-sub">BPD-2024-089 · 10 Nov 2024</div>
+                  </div>
+
+                  <span className="ri-badge badge-selesai">Selesai</span>
                 </div>
               </div>
 
-              {/* CENTER COLUMN */}
-              <div className="center-col">
-                {/* Journey Card */}
-                <div className="journey-card">
-                  <div className="journey-bg-layer"></div>
-                  <div className="journey-content">
-                    <div className="journey-header">
-                      <div className="journey-title">Status Penanganan Kasus</div>
-                      <div className="journey-subtitle">Perkembangan laporan Anda saat ini</div>
-                    </div>
-                    <div className="journey-steps">
-                      <div className="step-node">
-                        <div className="step-circle done">
-                          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3">
-                            <polyline points="20 6 9 17 4 12"/>
-                          </svg>
-                        </div>
-                        <div className="step-label done">Laporan<br />Diterima</div>
-                      </div>
-                      <div className="step-connector done"></div>
-                      <div className="step-node">
-                        <div className="step-circle done">
-                          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3">
-                            <polyline points="20 6 9 17 4 12"/>
-                          </svg>
-                        </div>
-                        <div className="step-label done">Verifikasi<br />SASC</div>
-                      </div>
-                      <div className="step-connector done"></div>
-                      <div className="step-node">
-                        <div className="step-circle active">
-                          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5">
-                            <circle cx="12" cy="12" r="3"/>
-                            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2"/>
-                          </svg>
-                        </div>
-                        <div className="step-label active">Investigasi<br />Aktif</div>
-                      </div>
-                      <div className="step-connector"></div>
-                      <div className="step-node">
-                        <div className="step-circle locked">
-                          <svg viewBox="0 0 24 24" fill="none" stroke="#9AB5D0" strokeWidth="2">
-                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                          </svg>
-                        </div>
-                        <div className="step-label">Konsultasi</div>
-                      </div>
-                      <div className="step-connector"></div>
-                      <div className="step-node">
-                        <div className="step-circle locked">
-                          <svg viewBox="0 0 24 24" fill="none" stroke="#9AB5D0" strokeWidth="2">
-                            <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
-                          </svg>
-                        </div>
-                        <div className="step-label">Selesai</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              {/* Akses Cepat */}
+              <div className="panel">
+                <h3>Akses Cepat</h3>
 
-                {/* Quick Actions */}
-                <div className="widget">
-                  <div className="widget-title">Aksi Cepat</div>
-                  <div className="qa-grid">
-                    <div className="qa-item">
-                      <div className="qa-icon" style={{ background: '#EEF4FF' }}>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#1A5FB4" strokeWidth="2">
-                          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-                          <polyline points="14 2 14 8 20 8"/>
-                          <line x1="12" y1="18" x2="12" y2="12"/>
-                          <line x1="9" y1="15" x2="15" y2="15"/>
-                        </svg>
-                      </div>
-                      <div className="qa-label">Buat Laporan</div>
+                <div className="quick-btns">
+                  <div className="qbtn" onClick={() => goPage('lapor')}>
+                    <div className="qbtn-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M12 5v14M5 12l7-7 7 7" />
+                      </svg>
                     </div>
-                    <div className="qa-item">
-                      <div className="qa-icon" style={{ background: '#E8F5E9' }}>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#2E7D32" strokeWidth="2">
-                          <circle cx="11" cy="11" r="8"/>
-                          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-                        </svg>
-                      </div>
-                      <div className="qa-label">Lacak Tiket</div>
-                    </div>
-                    <div className="qa-item">
-                      <div className="qa-icon" style={{ background: '#FFF3E0' }}>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#B06000" strokeWidth="2">
-                          <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
-                          <circle cx="9" cy="7" r="4"/>
-                          <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
-                        </svg>
-                      </div>
-                      <div className="qa-label">Booking Psikolog</div>
-                    </div>
-                    <div className="qa-item">
-                      <div className="qa-icon" style={{ background: '#F3E5F5' }}>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#6A1B9A" strokeWidth="2">
-                          <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/>
-                          <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
-                        </svg>
-                      </div>
-                      <div className="qa-label">E-Book</div>
-                    </div>
-                    <div className="qa-item">
-                      <div className="qa-icon" style={{ background: '#E0F7FA' }}>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#006064" strokeWidth="2">
-                          <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
-                        </svg>
-                      </div>
-                      <div className="qa-label">Grounding</div>
-                    </div>
-                    <div className="qa-item">
-                      <div className="qa-icon" style={{ background: '#FBE9E7' }}>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#BF360C" strokeWidth="2">
-                          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19 19 0 013.1 5.18 2 2 0 015.07 3h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L9.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
-                        </svg>
-                      </div>
-                      <div className="qa-label">Hubungi SASC</div>
-                    </div>
-                  </div>
-                </div>
 
-                {/* Riwayat Laporan */}
-                <div className="widget">
-                  <div className="widget-header">
-                    <div className="widget-title">Riwayat Laporan</div>
-                    <span className="see-all-link">Lihat semua</span>
-                  </div>
-                  <div className="laporan-grid">
-                    <div className="lap-card">
-                      <div className="lap-card-top">
-                        <div className="lap-icon" style={{ background: '#EEF4FF' }}>
-                          <svg viewBox="0 0 24 24" fill="none" stroke="#1A5FB4" strokeWidth="2" width="16" height="16">
-                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-                            <polyline points="14 2 14 8 20 8"/>
-                          </svg>
-                        </div>
-                        <span className="badge-proses">Diproses</span>
-                      </div>
-                      <div className="lap-id">BPD-2025-001</div>
-                      <div className="lap-category">Pelecehan Verbal</div>
-                      <div className="lap-date">12 Maret 2025</div>
-                      <div className="lap-progress">
-                        <div className="progress-track"><div className="progress-fill" style={{ width: '60%' }}></div></div>
-                        <div className="progress-label">Step 3 dari 5 — Investigasi</div>
-                      </div>
+                    <div>
+                      <div className="qbtn-title">Buat Laporan Baru</div>
+                      <div className="qbtn-sub">Laporan anonim atau terbuka</div>
                     </div>
-                    <div className="lap-card">
-                      <div className="lap-card-top">
-                        <div className="lap-icon" style={{ background: '#E8F5E9' }}>
-                          <svg viewBox="0 0 24 24" fill="none" stroke="#2E7D32" strokeWidth="2" width="16" height="16">
-                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-                            <polyline points="14 2 14 8 20 8"/>
-                          </svg>
-                        </div>
-                        <span className="badge-selesai">Selesai</span>
-                      </div>
-                      <div className="lap-id">BPD-2025-002</div>
-                      <div className="lap-category">Bullying Verbal</div>
-                      <div className="lap-date">5 Februari 2025</div>
-                      <div className="lap-progress">
-                        <div className="progress-track"><div className="progress-fill" style={{ width: '100%', background: '#4CAF50' }}></div></div>
-                        <div className="progress-label" style={{ color: '#388E3C' }}>Selesai ditangani</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-              {/* RIGHT COLUMN */}
-              <div className="right-col">
-                <div className="widget">
-                  <div className="widget-title">Notifikasi</div>
-                  <div className="notif-list">
-                    <div className="notif-item">
-                      <div className="notif-dot-blue"></div>
-                      <div>
-                        <div className="notif-text">Status <strong>BPD-2025-001</strong> diperbarui ke Investigasi</div>
-                        <div className="notif-time">2 jam lalu</div>
-                      </div>
-                    </div>
-                    <div className="notif-item">
-                      <div className="notif-dot-green"></div>
-                      <div>
-                        <div className="notif-text">Sesi konsultasi dikonfirmasi untuk Rabu, 10 Apr</div>
-                        <div className="notif-time">1 hari lalu</div>
-                      </div>
-                    </div>
-                    <div className="notif-item">
-                      <div className="notif-dot-amber"></div>
-                      <div>
-                        <div className="notif-text">E-Book baru: <strong>Panduan Grounding Darurat</strong></div>
-                        <div className="notif-time">3 hari lalu</div>
-                      </div>
+                    <div className="qbtn-arrow">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <polyline points="9 18 15 12 9 6" />
+                      </svg>
                     </div>
                   </div>
-                </div>
 
-                <div className="widget">
-                  <div className="widget-title">Psikolog Tersedia</div>
-                  <div className="psikolog-list">
-                    <div className="psikolog-card">
-                      <div className="psi-avatar" style={{ background: '#EEF4FF', color: '#1A5FB4' }}>AS</div>
-                      <div>
-                        <div className="psi-name">dr. Ayu Safira</div>
-                        <div className="psi-spec">Trauma & Kekerasan</div>
-                        <div className="psi-available">Tersedia hari ini</div>
-                      </div>
+                  <div className="qbtn" onClick={() => goPage('track')}>
+                    <div className="qbtn-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <circle cx="11" cy="11" r="8" />
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                      </svg>
                     </div>
-                    <div className="psikolog-card">
-                      <div className="psi-avatar" style={{ background: '#F3E5F5', color: '#6A1B9A' }}>RW</div>
-                      <div>
-                        <div className="psi-name">Rizky Wibowo, M.Psi</div>
-                        <div className="psi-spec">Psikologi Klinis</div>
-                        <div className="psi-available">Tersedia besok</div>
-                      </div>
+
+                    <div>
+                      <div className="qbtn-title">Lacak Status Laporan</div>
+                      <div className="qbtn-sub">Gunakan Ticket ID Anda</div>
+                    </div>
+
+                    <div className="qbtn-arrow">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <polyline points="9 18 15 12 9 6" />
+                      </svg>
                     </div>
                   </div>
-                  <button className="btn-book">Booking Sesi Sekarang</button>
+
+                  <div className="qbtn">
+                    <div className="qbtn-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+                      </svg>
+                    </div>
+
+                    <div>
+                      <div className="qbtn-title">Booking Sesi Konsultasi</div>
+                      <div className="qbtn-sub">Psikolog & psikiater kampus</div>
+                    </div>
+
+                    <div className="qbtn-arrow">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <polyline points="9 18 15 12 9 6" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       )}
+      {/* LAPOR */ }
+      <div className={`page ${currentPage === 'lapor' ? 'show' : ''}`} id="pg-lapor">
+        <div className="form-pg">
+          <h2>Buat Laporan Baru</h2>
+          <div className="sub">Semua data dilindungi. Anda bisa memilih untuk tetap anonim.</div>
+          <div className="step-bar">
+            <div className="step"><div className="step-dot active">1</div><div className="step-lbl active">Privasi</div></div>
+            <div className="step-line"></div>
+            <div className="step"><div className="step-dot">2</div><div className="step-lbl">Kategori</div></div>
+            <div className="step-line"></div>
+            <div className="step"><div className="step-dot">3</div><div className="step-lbl">Kronologi</div></div>
+            <div className="step-line"></div>
+            <div className="step"><div className="step-dot">4</div><div className="step-lbl">Bukti</div></div>
+            <div className="step-line"></div>
+            <div className="step"><div className="step-dot">5</div><div className="step-lbl">Kirim</div></div>
+          </div>
+          <div className="fcard">
+            <h3>Pilih mode pelaporan</h3>
+            <div className="fcard-sub">Pilih sesuai kenyamanan Anda. Keduanya valid dan akan ditindaklanjuti oleh SASC.</div>
+            <div className="choice-grid">
+              <div className="choice sel" onClick={() => {
+                document.querySelector('.choice.sel').classList.remove('sel');
+                this.classList.add('sel');
+              }}>
+                <div className="choice-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="8" r="5"/><path d="M3 21v-1a9 9 0 0118 0v1"/><line x1="12" y1="15" x2="12" y2="21" strokeDasharray="3 2"/></svg></div>
+                <div className="choice-title">Laporan Anonim</div>
+                <div className="choice-desc">Identitas tidak dicatat sama sekali. Anda mendapat Ticket ID untuk melacak status.</div>
+              </div>
+              <div className="choice" onClick={() => {
+                document.querySelector('.choice.sel').classList.remove('sel');
+                this.classList.add('sel');
+              }}>
+                <div className="choice-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                <div className="choice-title">Laporan Terbuka</div>
+                <div className="choice-desc">Sertakan NIM dan nomor HP agar SASC bisa menghubungi langsung untuk bantuan segera.</div>
+              </div>
+            </div>
+            <div className="panic-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <div><div className="panic-title">Tombol Keluar Darurat</div><div className="panic-sub">Tekan jika seseorang mendekat — layar langsung tertutup otomatis</div></div>
+            </div>
+            <div className="form-nav">
+              <button className="fnav-back" onClick={() => goPage('dashboard')}>Kembali</button>
+              <button className="fnav-next">Lanjut: Pilih Kategori →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
 
       {/* TRACK */}
       <div className={`page ${currentPage === 'track' ? 'show' : ''}`} id="pg-track">
